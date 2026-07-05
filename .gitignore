@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project-specific
+data/
+*.db
+*.sqlite
+service-account.json
+google-credentials*.json
+logs/
