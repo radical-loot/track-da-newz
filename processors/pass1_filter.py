@@ -36,15 +36,9 @@ _client = AsyncOpenAI(base_url=OPENROUTER_BASE_URL, api_key=OPENROUTER_API_KEY)
 _SYSTEM = "You classify Indian news articles. Answer only YES or NO — no explanation."
 
 _PROMPT = """\
-Does this article report a specific act of physical, sexual, or deadly violence \
-in India in which the VICTIM was a transgender, hijra, kinnar, aravani, \
-thirunangai, or other third-gender person?
-
-Strict rules:
-- The trans/third-gender person must be the VICTIM of the violence. Answer NO if \
-they are the perpetrator, accused, or merely mentioned.
-- Answer NO for opinion pieces, biographies, legal or policy analysis, and general \
-discussions of discrimination that do not report a specific violent incident.
+Does this article report or describe an act of physical, sexual, or deadly violence \
+committed against a transgender, hijra, kinnar, aravani, thirunangai, or other \
+third-gender person in India?
 
 Title  : {title}
 Excerpt: {excerpt}
@@ -70,8 +64,12 @@ async def _classify_one(article: dict, semaphore: asyncio.Semaphore) -> tuple[in
                 ],
                 max_tokens=5,
                 temperature=0,
+                # Some OpenRouter DeepSeek builds default to emitting reasoning
+                # tokens that eat the whole max_tokens budget, leaving
+                # content=None. Excluding reasoning forces a direct answer.
+                extra_body={"reasoning": {"exclude": True}},
             )
-            answer = resp.choices[0].message.content.strip().upper()
+            answer = (resp.choices[0].message.content or "").strip().upper()
             return article["id"], ("YES" if "YES" in answer else "NO")
         except Exception as e:
             log.warning("Pass 1 error for article %d: %s", article["id"], e)

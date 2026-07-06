@@ -218,7 +218,9 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Project-specific
-data/
+# Root data/ only (SQLite DB, logs) — docs/data/ JSON exports MUST be committed
+# for the GitHub Pages site to work.
+/data/
 *.db
 *.sqlite
 service-account.json
