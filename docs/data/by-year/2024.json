@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://timesofindia.indiatimes.com/city/rajkot/morbi-cops-crack-murder-case-arrest-2/articleshow/116344172.cms",
+    "title": "Morbi cops crack murder case , arrest 2 | Rajkot News",
+    "source_name": "timesofindia.indiatimes.com",
+    "source_domain": "timesofindia.indiatimes.com",
+    "published_date": "20241215",
+    "excerpt": null,
+    "violence_type": "murder",
+    "incident_date": null,
+    "state": "Gujarat",
+    "city": "Morbi district",
+    "victim_count": 1,
+    "perpetrator_type": "individual",
+    "outcome": "victim_died",
+    "summary": "Two men arrested in Morbi district allegedly murdered Sanjay Mahvai after mistaking him for a eunuch/kinnar/third-gender person and making inappropriate advances that led to a stabbing."
+  },
+  {
+    "url": "https://timesofindia.indiatimes.com/india/male-rape-survivors-overlooked-by-bns/articleshow/111713146.cms",
+    "title": "Male rape survivors overlooked by BNS - Times of India",
+    "source_name": "timesofindia.indiatimes.com",
+    "source_domain": "timesofindia.indiatimes.com",
+    "published_date": "20240713",
+    "excerpt": null,
+    "violence_type": "sexual_assault",
+    "incident_date": null,
+    "state": null,
+    "city": null,
+    "victim_count": 0,
+    "perpetrator_type": "unknown",
+    "outcome": "unknown",
+    "summary": "The article discusses how the BNS removal of Section 377 and reliance on the Transgender Act 2019 affects legal recognition and punishment for sexual assaults against men and transgender people, rather than describing a specific incident."
+  },
+  {
+    "url": "https://indianexpress.com/article/cities/pune/from-closet-to-cabin-transgender-persons-in-pune-move-on-to-white-collar-jobs-and-dignity-9205909/",
+    "title": "From closet to cabin : Transgender persons in Pune move on to white - collar jobs and dignity",
+    "source_name": "indianexpress.com",
+    "source_domain": "indianexpress.com",
+    "published_date": "20240310",
+    "excerpt": null,
+    "violence_type": "other",
+    "incident_date": null,
+    "state": "Maharashtra",
+    "city": "Solapur",
+    "victim_count": 1,
+    "perpetrator_type": "family",
+    "outcome": "victim_survived",
+    "summary": "A transgender woman from Solapur said that after she publicly came out around Dussehra, her younger brother threatened to kill her."
+  }
+]

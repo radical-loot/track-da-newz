@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://www.indiatoday.in/crime/story/mob-attacks-transgender-suspecting-her-to-be-a-child-lifter-in-udaipur-1593969-2019-08-31",
+    "title": "Mob attacks transgender suspecting her to be a child lifter in Udaipur",
+    "source_name": "indiatoday.in",
+    "source_domain": "indiatoday.in",
+    "published_date": "20190831",
+    "excerpt": null,
+    "violence_type": "mob_violence",
+    "incident_date": null,
+    "state": "Rajasthan",
+    "city": "Udaipur",
+    "victim_count": 1,
+    "perpetrator_type": "mob",
+    "outcome": "victim_survived",
+    "summary": "An angry mob attacked transgender Basanti in Udaipur after rumours claimed she was involved in a child-lifting gang, causing her injuries and prompting police action and arrests."
+  },
+  {
+    "url": "http://www.newindianexpress.com/nation/2019/aug/31/mob-in-rajasthan-attacks-transgender-suspecting-her-to-be-a-child-lifter-2027189.html",
+    "title": "Mob in Rajasthan attacks transgender suspecting her to be a child lifter",
+    "source_name": "newindianexpress.com",
+    "source_domain": "newindianexpress.com",
+    "published_date": "20190831",
+    "excerpt": null,
+    "violence_type": "mob_violence",
+    "incident_date": null,
+    "state": "Rajasthan",
+    "city": "Udaipur",
+    "victim_count": 1,
+    "perpetrator_type": "mob",
+    "outcome": "victim_survived",
+    "summary": "An angry mob attacked transgender Basanti in Udaipur after rumours claimed she was connected to a child-lifting gang, causing her several injuries before she was taken to hospital by police."
+  }
+]

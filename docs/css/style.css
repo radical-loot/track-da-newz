@@ -1,0 +1,277 @@
+/* Trans Violence Tracker — trans pride flag palette
+   blue #5BCEFA · pink #F5A9B8 · white #FFFFFF
+   (darker shades derived for text contrast) */
+
+:root {
+  --flag-blue:  #5BCEFA;
+  --flag-pink:  #F5A9B8;
+  --flag-white: #FFFFFF;
+  --blue-deep:  #0e6a91;   /* accessible dark blue for links/accents */
+  --pink-deep:  #b34a63;   /* accessible dark pink for accents */
+  --ink:        #22303a;
+  --ink-soft:   #55656f;
+  --bg:         #f7fbfe;
+  --card-bg:    #ffffff;
+  --border:     #dcebf4;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ── Flag stripe ─────────────────────────────────────────── */
+
+.flag-stripe {
+  height: 8px;
+  background: linear-gradient(to right,
+    var(--flag-blue)  0 20%,
+    var(--flag-pink) 20% 40%,
+    var(--flag-white) 40% 60%,
+    var(--flag-pink) 60% 80%,
+    var(--flag-blue) 80% 100%);
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+
+.site-header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0 0.9rem;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.55rem;
+  letter-spacing: -0.01em;
+}
+
+.site-header h1 .sub {
+  color: var(--blue-deep);
+  font-weight: 600;
+}
+
+.tagline {
+  margin: 0.35rem 0 0.8rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.site-header nav a {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--blue-deep);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+}
+
+.site-header nav a[aria-current="page"] {
+  background: var(--flag-blue);
+  border-color: var(--flag-blue);
+  color: #093549;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+  background: var(--flag-pink);
+  border-color: var(--flag-pink);
+  color: #5a1f2e;
+}
+
+/* ── Filters ─────────────────────────────────────────────── */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 9.5rem;
+  flex: 1 1 auto;
+}
+
+.filter-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.filter-group input,
+.filter-group select {
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.55rem;
+}
+
+.filter-group input:focus-visible,
+.filter-group select:focus-visible,
+#filter-clear:focus-visible,
+.card:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--flag-blue);
+  outline-offset: 2px;
+}
+
+.filter-actions { flex: 0 0 auto; min-width: auto; }
+
+#filter-clear {
+  font: inherit;
+  font-weight: 600;
+  color: var(--pink-deep);
+  background: #fff;
+  border: 1px solid var(--flag-pink);
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+#filter-clear:hover { background: var(--flag-pink); color: #5a1f2e; }
+
+.result-count {
+  margin: 0.25rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+/* ── Cards (vertical blocks) ─────────────────────────────── */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding-bottom: 2.5rem;
+}
+
+.card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--flag-blue);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+a.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(91, 206, 250, 0.28), 0 2px 6px rgba(245, 169, 184, 0.25);
+  border-left-color: var(--flag-pink);
+}
+
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin-bottom: 0.45rem;
+  font-size: 0.78rem;
+}
+
+.badge {
+  padding: 0.13rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--flag-blue);
+  color: #093549;
+}
+
+.badge.fatal   { background: #2b3a45; color: #fff; }
+.badge.outcome { background: var(--flag-pink); color: #5a1f2e; }
+
+.card-date {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.card h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.card .summary {
+  margin: 0 0 0.55rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  font-size: 0.8rem;
+  color: var(--blue-deep);
+  font-weight: 600;
+}
+
+.notice {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  color: var(--ink-soft);
+}
+
+/* ── About page ──────────────────────────────────────────── */
+
+.about { padding-bottom: 2.5rem; }
+
+.about h2 {
+  margin: 1.6rem 0 0.4rem;
+  font-size: 1.15rem;
+  color: var(--blue-deep);
+}
+
+.about p { max-width: 65ch; }
+
+/* ── Footer ──────────────────────────────────────────────── */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--card-bg);
+  padding: 1rem 0 1.4rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+a { color: var(--blue-deep); }
+
+@media (max-width: 560px) {
+  .filters { flex-direction: column; align-items: stretch; }
+  .filter-group { min-width: 0; }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="An independent tracker of news reports of violence against transgender, hijra, kinnar and other third-gender people in India.">
+  <title>Trans Violence Tracker — India</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2010%2010'%3E%3Crect%20width='10'%20height='2'%20fill='%235BCEFA'/%3E%3Crect%20y='2'%20width='10'%20height='2'%20fill='%23F5A9B8'/%3E%3Crect%20y='4'%20width='10'%20height='2'%20fill='%23FFFFFF'/%3E%3Crect%20y='6'%20width='10'%20height='2'%20fill='%23F5A9B8'/%3E%3Crect%20y='8'%20width='10'%20height='2'%20fill='%235BCEFA'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="flag-stripe" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Trans Violence Tracker <span class="sub">India</span></h1>
+      <p class="tagline">Documenting news reports of violence against transgender, hijra, kinnar and third-gender people in India.</p>
+      <nav aria-label="Main">
+        <a href="index.html" aria-current="page">Articles</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="filters" aria-label="Filters">
+      <div class="filter-group">
+        <label for="filter-from">From date</label>
+        <input type="date" id="filter-from">
+      </div>
+      <div class="filter-group">
+        <label for="filter-to">To date</label>
+        <input type="date" id="filter-to">
+      </div>
+      <div class="filter-group">
+        <label for="filter-state">State</label>
+        <select id="filter-state">
+          <option value="all">All states</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filter-lang">Language</label>
+        <select id="filter-lang">
+          <option value="all">All languages</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <div class="filter-group filter-actions">
+        <button type="button" id="filter-clear">Clear filters</button>
+      </div>
+    </section>
+
+    <p id="result-count" class="result-count" role="status" aria-live="polite"></p>
+
+    <div id="cards" class="cards">
+      <noscript>
+        <p class="notice">This page needs JavaScript to load and filter the article list.
+        The raw data is available at <a href="data/articles.json">data/articles.json</a>.</p>
+      </noscript>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>An independent personal project — not affiliated with any organisation.
+         Each entry links to the original news article; all reporting belongs to the cited publication.
+         <a href="about.html">About this site</a></p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

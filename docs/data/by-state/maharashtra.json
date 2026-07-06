@@ -1,0 +1,34 @@
+[
+  {
+    "url": "https://indianexpress.com/article/cities/pune/pimpri-chinchwad-police-transgender-act-attacking-transgender-student-10059245/",
+    "title": "Pimpri Chinchwad : Police book four persons under Transgender Act for attacking transgender student , hurling abuses",
+    "source_name": "indianexpress.com",
+    "source_domain": "indianexpress.com",
+    "published_date": "20250610",
+    "excerpt": null,
+    "violence_type": "physical_assault",
+    "incident_date": null,
+    "state": "Maharashtra",
+    "city": "Pimpri Chinchwad, Pune",
+    "victim_count": 1,
+    "perpetrator_type": "individual",
+    "outcome": "victim_survived",
+    "summary": "Four people attacked a 20-year-old transgender student, dragging them out of a rented house and beating them with a steel rod while hurling abuses over their transgender identity, amid an accommodation dispute."
+  },
+  {
+    "url": "https://indianexpress.com/article/cities/pune/from-closet-to-cabin-transgender-persons-in-pune-move-on-to-white-collar-jobs-and-dignity-9205909/",
+    "title": "From closet to cabin : Transgender persons in Pune move on to white - collar jobs and dignity",
+    "source_name": "indianexpress.com",
+    "source_domain": "indianexpress.com",
+    "published_date": "20240310",
+    "excerpt": null,
+    "violence_type": "other",
+    "incident_date": null,
+    "state": "Maharashtra",
+    "city": "Solapur",
+    "victim_count": 1,
+    "perpetrator_type": "family",
+    "outcome": "victim_survived",
+    "summary": "A transgender woman from Solapur said that after she publicly came out around Dussehra, her younger brother threatened to kill her."
+  }
+]

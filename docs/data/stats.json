@@ -1,0 +1,54 @@
+{
+  "total_incidents": 19,
+  "by_violence_type": {
+    "sexual_assault": 5,
+    "murder": 7,
+    "physical_assault": 2,
+    "other": 1,
+    "police_brutality": 2,
+    "mob_violence": 2
+  },
+  "by_outcome": {
+    "victim_survived": 9,
+    "victim_died": 6,
+    "unknown": 4
+  },
+  "by_perpetrator": {
+    "individual": 7,
+    "unknown": 6,
+    "family": 2,
+    "police": 2,
+    "mob": 2
+  },
+  "by_year": {
+    "2019": 5,
+    "2020": 1,
+    "2021": 1,
+    "2022": 2,
+    "2023": 3,
+    "2024": 3,
+    "2025": 4
+  },
+  "by_state": {
+    "Bihar": 1,
+    "Delhi": 1,
+    "Gujarat": 3,
+    "Karnataka": 1,
+    "Madhya Pradesh": 2,
+    "Maharashtra": 2,
+    "North India": 1,
+    "Rajasthan": 2,
+    "Tamil Nadu": 1,
+    "Telangana": 1,
+    "Unknown": 1,
+    "Uttar Pradesh": 3
+  },
+  "pipeline_stats": {
+    "total_collected": 3796,
+    "extracted": 2804,
+    "extraction_failed": 992,
+    "pass1_yes": 19,
+    "pass1_no": 1466,
+    "pass2_done": 19
+  }
+}
