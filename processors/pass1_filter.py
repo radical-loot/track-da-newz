@@ -36,9 +36,15 @@ _client = AsyncOpenAI(base_url=OPENROUTER_BASE_URL, api_key=OPENROUTER_API_KEY)
 _SYSTEM = "You classify Indian news articles. Answer only YES or NO — no explanation."
 
 _PROMPT = """\
-Does this article report or describe an act of physical, sexual, or deadly violence \
-committed against a transgender, hijra, kinnar, aravani, thirunangai, or other \
-third-gender person in India?
+Does this article report a specific act of physical, sexual, or deadly violence \
+in India in which the VICTIM was a transgender, hijra, kinnar, aravani, \
+thirunangai, or other third-gender person?
+
+Strict rules:
+- The trans/third-gender person must be the VICTIM of the violence. Answer NO if \
+they are the perpetrator, accused, or merely mentioned.
+- Answer NO for opinion pieces, biographies, legal or policy analysis, and general \
+discussions of discrimination that do not report a specific violent incident.
 
 Title  : {title}
 Excerpt: {excerpt}

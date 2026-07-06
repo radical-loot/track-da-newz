@@ -36,8 +36,14 @@ _client = AsyncOpenAI(base_url=OPENROUTER_BASE_URL, api_key=OPENROUTER_API_KEY)
 _SYSTEM = "You extract structured information from news articles. Return only valid JSON."
 
 _PROMPT = """\
-Extract incident details from this Indian news article about violence against \
-a transgender/hijra/kinnar/third-gender person.
+Extract incident details from this Indian news article about violence in which \
+the VICTIM is a transgender/hijra/kinnar/third-gender person.
+
+Important: only describe violence committed AGAINST the trans/third-gender \
+person. If the article does not report such an incident (e.g. the trans person \
+is the perpetrator, or the piece is opinion/biography/legal analysis with no \
+specific incident), set every field to null except "summary", and set \
+"summary" to exactly "NOT_A_VICTIM_INCIDENT".
 
 Article:
 {text}
