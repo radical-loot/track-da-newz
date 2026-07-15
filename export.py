@@ -15,6 +15,8 @@ Output structure:
 
 import json
 import logging
+import re
+import shutil
 from collections import defaultdict
 from pathlib import Path
 
@@ -43,6 +45,12 @@ def run():
 
     log.info("Exporting %d articles to %s", len(articles), EXPORT_DIR)
 
+    # Clear grouped subdirectories first — a state/year that had articles in a
+    # previous export but has none now (e.g. after a data correction) would
+    # otherwise leave a stale, orphaned JSON file behind.
+    for subdir in ("by-state", "by-year"):
+        shutil.rmtree(EXPORT_DIR / subdir, ignore_errors=True)
+
     # ── All articles (newest first) ────────────────────────────────────────
     _write_json(EXPORT_DIR / "articles.json", articles)
 
@@ -62,7 +70,8 @@ def run():
     by_year: dict[str, list] = defaultdict(list)
     for a in articles:
         date = a.get("published_date") or a.get("incident_date") or ""
-        year = date[:4] if len(date) >= 4 else "unknown"
+        match = re.match(r"^(\d{4})", date)
+        year = match.group(1) if match else "unknown"
         by_year[year].append(a)
 
     for year, items in by_year.items():

@@ -1,54 +1,62 @@
 {
-  "total_incidents": 19,
+  "total_incidents": 71,
   "by_violence_type": {
-    "sexual_assault": 5,
-    "murder": 7,
-    "physical_assault": 2,
-    "other": 1,
-    "police_brutality": 2,
-    "mob_violence": 2
+    "murder": 22,
+    "sexual_assault": 18,
+    "mob_violence": 5,
+    "physical_assault": 16,
+    "police_brutality": 7,
+    "other": 3
   },
   "by_outcome": {
-    "victim_survived": 9,
-    "victim_died": 6,
-    "unknown": 4
+    "victim_died": 23,
+    "victim_survived": 39,
+    "unknown": 9
   },
   "by_perpetrator": {
-    "individual": 7,
-    "unknown": 6,
-    "family": 2,
-    "police": 2,
-    "mob": 2
+    "individual": 32,
+    "family": 5,
+    "mob": 14,
+    "unknown": 13,
+    "police": 7
   },
   "by_year": {
-    "2019": 5,
-    "2020": 1,
+    "2017": 4,
+    "2018": 3,
+    "2019": 7,
+    "2020": 2,
     "2021": 1,
-    "2022": 2,
-    "2023": 3,
-    "2024": 3,
-    "2025": 4
+    "2022": 4,
+    "2023": 4,
+    "2024": 4,
+    "2025": 18,
+    "2026": 3,
+    "unknown": 21
   },
   "by_state": {
+    "Andhra Pradesh": 2,
     "Bihar": 1,
-    "Delhi": 1,
+    "Delhi": 4,
     "Gujarat": 3,
-    "Karnataka": 1,
-    "Madhya Pradesh": 2,
-    "Maharashtra": 2,
+    "Karnataka": 3,
+    "Kerala": 8,
+    "Madhya Pradesh": 6,
+    "Maharashtra": 7,
     "North India": 1,
-    "Rajasthan": 2,
-    "Tamil Nadu": 1,
-    "Telangana": 1,
-    "Unknown": 1,
-    "Uttar Pradesh": 3
+    "Odisha": 1,
+    "Rajasthan": 4,
+    "Tamil Nadu": 12,
+    "Telangana": 9,
+    "Unknown": 4,
+    "Uttar Pradesh": 5,
+    "West Bengal": 1
   },
   "pipeline_stats": {
-    "total_collected": 3796,
-    "extracted": 2804,
-    "extraction_failed": 992,
-    "pass1_yes": 19,
-    "pass1_no": 1466,
-    "pass2_done": 19
+    "total_collected": 4643,
+    "extracted": 3526,
+    "extraction_failed": 1117,
+    "pass1_yes": 71,
+    "pass1_no": 2134,
+    "pass2_done": 71
   }
 }

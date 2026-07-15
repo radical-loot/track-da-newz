@@ -1,5 +1,21 @@
 [
   {
+    "url": "https://www.scoopwhoop.com/life/transgender-woman-prison-rape/",
+    "title": "Trans Woman Sent To An All-Male Prison Alleges She Was Raped More Than 2000 Times In 4 Years - ScoopWhoop",
+    "source_name": "ScoopWhoop",
+    "source_domain": "scoopwhoop.com",
+    "published_date": "Tue, 19 Ap",
+    "excerpt": "<a href=\"https://news.google.com/rss/articles/CBMib0FVX3lxTE9QRlJFcWk5OHNUUnhFcWhHXzFaczNxUmFpNVZkWnJEdlNucENwbDRtUmlTaXZqbGVvcnJRV1VqbWVWcndEd3FFT2pYWHpiOEVQblBxMjNNaVVkUllMYnZZaHBtVGtzOHltbGdpTHhhUQ?oc=5\" target=\"_blank\">Trans Woman Sent To An All-Male Prison Alleges She Was Raped More Than 2000 Times In 4 Years</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ScoopWhoop</font>",
+    "violence_type": "sexual_assault",
+    "incident_date": null,
+    "state": null,
+    "city": null,
+    "victim_count": 1,
+    "perpetrator_type": "individual",
+    "outcome": "victim_survived",
+    "summary": "A transgender woman named Mary reported repeated sexual assaults and coercive rape by male prisoners in the Boggo Road male prison in Queensland while serving a four-year sentence."
+  },
+  {
     "url": "https://timesofindia.indiatimes.com/india/male-rape-survivors-overlooked-by-bns/articleshow/111713146.cms",
     "title": "Male rape survivors overlooked by BNS - Times of India",
     "source_name": "timesofindia.indiatimes.com",
@@ -14,5 +30,37 @@
     "perpetrator_type": "unknown",
     "outcome": "unknown",
     "summary": "The article discusses how the BNS removal of Section 377 and reliance on the Transgender Act 2019 affects legal recognition and punishment for sexual assaults against men and transgender people, rather than describing a specific incident."
+  },
+  {
+    "url": "https://edtimes.in/gang-raped-at-11-work-at-massage-parlours-degree-from-nift-indias-first-transgender-beauty-queens-story/",
+    "title": "Gang-Raped At 11, Work At Massage Parlours, Degree From NIFT: India's First Transgender Beauty Queen’s Story - ED Times",
+    "source_name": "ED Times",
+    "source_domain": "edtimes.in",
+    "published_date": "20230104",
+    "excerpt": "<a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPNlVzQ254dzhVN05NYzM3WTlIX2poTTA2M2NEVmdJMmJqSzJYbWNlazFqMnBna21kVURzTDdDZzNQVFg5MzFlWVhRV1FFbWhRRUxyY0xzSjhDX3JmUXZHZDVxWjdFUUkyUDZvaF9XX25HYUV2RkVoVS1sV2hLbkRrR2dUVWZUdXVFbW1ubnpuaFg4aUFRdENYTnljNlN0Q1FHUHRvdnFnMnppV3g2Qkx6RUNKSVJzRDgyam05QWRtcmw?oc=5\" target=\"_blank\">Gang-Raped At 11, Work At Massage Parlours, Degree From NIFT: India's First Transgender Beauty Queen’s Story</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">ED Times</font>",
+    "violence_type": "sexual_assault",
+    "incident_date": null,
+    "state": null,
+    "city": "Mumbai",
+    "victim_count": 1,
+    "perpetrator_type": "individual",
+    "outcome": "victim_survived",
+    "summary": "Aizya Naaz Joshi was gang-raped by a male cousin and his friends, which left her hospitalized."
+  },
+  {
+    "url": "https://timesofindia.indiatimes.com/city/aurangabad/2-held-for-transgender-persons-gang-rape/articleshow/93550668.cms",
+    "title": "2 held for transgender person’s gang rape - The Times of India",
+    "source_name": "The Times of India",
+    "source_domain": "timesofindia.indiatimes.com",
+    "published_date": "20220814",
+    "excerpt": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNOHdvSzk5M0J1cF8xTXJrRVZ1bm9RRTlTMW9TY0hBU3JZaEpNRFdZSVpsSjZzVElxQWMxN3h0bnpMUFktSzg5TTlqYXNUUk9jVDREWmtudTVnUkI5M3lNUFkyU2ozeUdQUnVycjllRlNuTHRkb1RPM2U3RjBZQ1lCNUpmeENpZVd4ckFUY00yVU54dTRIUG8yTlNnXzlNV0g1ckdtQ0p4SFQ5T25BU2xYLWtqQ1dhMWh50gG-AUFVX3lxTFB4VnFOTXNqanBlX2tubGd4Q3ZLYWktbVJDb2t1N0hpbUlEUG1oeWxUQVItTEhuXzRicDYtcjFmWVhSdEItZDF3eEI5NzQybVA4bUw5YnB6NTd2dmhxdnQ3WHltcXQ3U0FWRU9nN0lXTGZJWFE5VnFvenVVY2VHMTlIMHczMmVVUFc1NDFpSHF3ZFloVjlQUnRkWlFHQV85X3k4TzlDNlhieVVBZmdYVGdIZWNxMnBoTS1Gb2dpWFE?oc=5\" target=\"_blank\">2 held for transgender person’s gang rape</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">The Times of India</font>",
+    "violence_type": "sexual_assault",
+    "incident_date": null,
+    "state": null,
+    "city": "Aurangabad (Kadim Jalna police station)",
+    "victim_count": 1,
+    "perpetrator_type": "individual",
+    "outcome": "unknown",
+    "summary": "A 30-year-old transgender complainant alleged that two male accused and a third transgender suspect lured her under a railway flyover where she was gang-raped and assaulted with unnatural acts."
   }
 ]

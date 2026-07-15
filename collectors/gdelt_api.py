@@ -6,10 +6,11 @@ Searches article content (not just metadata) and supports country/language filte
 
 Strategy:
   - Build one query per TRANS_TERM (e.g. '"hijra"')
-  - "india" is NOT added to queries — the API params sourcecountry=india and
-    sourcelang=english already restrict results to Indian English sources.
-    Adding "india" would exclude the majority of Indian articles that are written
-    for an Indian audience and never mention the country by name.
+  - "india" is NOT added as a keyword — sourcecountry:IN and sourcelang:eng are
+    embedded directly IN the query string (GDELT operators, not URL params —
+    passing them as separate URL params is silently ignored by the API).
+    Adding "india" as a keyword would exclude the majority of Indian articles
+    that are written for an Indian audience and never mention the country by name.
   - Chunk the date range into GDELT_CHUNK_DAYS windows
   - Fetch up to 250 results per query × window combination
 """
@@ -32,13 +33,15 @@ from config import (
 log = logging.getLogger(__name__)
 
 # One query per trans term — violence filtering is left to Pass 1.
-# No "india" appended: sourcecountry=india in API params already handles that.
-QUERIES = [f'"{term}"' for term in TRANS_TERMS]
+# sourcecountry:IN and sourcelang:eng are GDELT in-query operators, appended
+# to each query string (NOT URL params — see module docstring).
+QUERIES = [f'"{term}" sourcecountry:IN sourcelang:eng' for term in TRANS_TERMS]
 
-# GDELT enforces "1 request per 5 seconds" — we use 6s to stay safely under
-REQUEST_DELAY     = 6.0   # seconds between requests
-RETRY_429_DELAY   = 15.0  # seconds to wait after a 429 before retrying
-MAX_RETRIES       = 3     # max retries per window on 429
+# GDELT enforces "1 request per 5 seconds" — we use 10s to stay safely under
+# and avoid burning retry budget on a long historical run.
+REQUEST_DELAY     = 10.0  # seconds between requests
+RETRY_429_DELAY   = 20.0  # seconds to wait after a 429 before retrying
+MAX_RETRIES       = 5     # max retries per window on 429
 
 
 def _date_windows(start: datetime, end: datetime, chunk_days: int = GDELT_CHUNK_DAYS):
@@ -53,8 +56,10 @@ def _date_windows(start: datetime, end: datetime, chunk_days: int = GDELT_CHUNK_
 def _fetch_window(query: str, start: datetime, end: datetime) -> list[dict]:
     """
     Single API call for one query × one time window.
-    Retries up to MAX_RETRIES times on 429, with RETRY_429_DELAY between attempts.
-    Returns empty list on final failure.
+    Retries up to MAX_RETRIES times on 429 AND on transient errors (timeouts,
+    DNS failures, connection resets, 5xx) — a tripped rate limit tends to
+    surface as these rather than a clean 429. Returns empty list only after
+    all retries are exhausted.
     """
     params = {
         "query":         query,
@@ -62,8 +67,6 @@ def _fetch_window(query: str, start: datetime, end: datetime) -> list[dict]:
         "maxrecords":    GDELT_MAX_RECORDS,
         "startdatetime": start.strftime("%Y%m%d%H%M%S"),
         "enddatetime":   end.strftime("%Y%m%d%H%M%S"),
-        "sourcelang":    "english",
-        "sourcecountry": "india",
         "format":        "json",
     }
     for attempt in range(1, MAX_RETRIES + 1):
@@ -75,22 +78,24 @@ def _fetch_window(query: str, start: datetime, end: datetime) -> list[dict]:
                 headers={"User-Agent": HTTP_USER_AGENT},
                 verify=False,  # GDELT cert expires periodically; data is public/non-sensitive
             )
-            if r.status_code == 429:
+            if r.status_code == 429 or r.status_code >= 500:
                 log.warning(
-                    "GDELT 429 rate-limited | attempt %d/%d | waiting %.0fs | %s %s–%s",
-                    attempt, MAX_RETRIES, RETRY_429_DELAY,
+                    "GDELT %d | attempt %d/%d | waiting %.0fs | %s %s–%s",
+                    r.status_code, attempt, MAX_RETRIES, RETRY_429_DELAY,
                     query, start.date(), end.date(),
                 )
                 time.sleep(RETRY_429_DELAY)
                 continue
             r.raise_for_status()
             return r.json().get("articles", [])
-        except httpx.HTTPStatusError:
-            raise
         except Exception as e:
-            log.warning("GDELT API error | query=%r window=%s–%s | %s",
-                        query, start.date(), end.date(), e)
-            return []
+            log.warning(
+                "GDELT error (attempt %d/%d) | query=%r window=%s–%s | %s",
+                attempt, MAX_RETRIES, query, start.date(), end.date(), e,
+            )
+            if attempt < MAX_RETRIES:
+                time.sleep(RETRY_429_DELAY)
+                continue
 
     log.error("GDELT gave up after %d retries | query=%r window=%s–%s",
               MAX_RETRIES, query, start.date(), end.date())
